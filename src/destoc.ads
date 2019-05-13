@@ -14,6 +14,7 @@ package destoc is
 
 private
 
+   -- Definición de un producto.
    type producte is record
       n: nom;
       m: marca;
@@ -21,8 +22,9 @@ private
       u: integer;
       end record;
 
+
    type estoc is record
-      p: integer;
+
    end record;
 
 end destoc;
