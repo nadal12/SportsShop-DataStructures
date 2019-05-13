@@ -1,6 +1,6 @@
 package destoc is
-   type marca is (Nike, Adidas, Reebok, Asics,Fila, Puma, Quiksilver, Kappa,
-                  Joma, Convers);
+   type marca is ('Nike', 'Adidas', 'Reebok', 'Asics', 'Fila', 'Puma', 'Quiksilver', 'Kappa',
+                  'Joma', 'Converse');
    type codi is new Natural range 0..5000000;
    type nom is new String(1..33);
    type estoc is limited private;
@@ -11,6 +11,7 @@ package destoc is
    procedure esborrar_producte(c: in out estoc; k: in codi);
    procedure imprimir_productes_marca(c: in estoc; m: in marca);
    procedure imprimir_estoc_total(c: in estoc);
+
 private
 
    type producte is record
