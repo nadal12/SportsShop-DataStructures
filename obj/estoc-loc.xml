@@ -42,9 +42,13 @@
       <vfs_project>C:\Users\Nadal\Desktop\stock\practica-3\estoc.gpr</vfs_project>
       <vfs_file>C:\Users\Nadal\Desktop\stock\practica-3\src\darbolavl.adb</vfs_file>
     </file_marker>
-    <file_marker current="true" column=" 1" line=" 1" >
+    <file_marker column=" 1" line=" 1" >
       <vfs_project>C:\Users\Nadal\Desktop\stock\practica-3\estoc.gpr</vfs_project>
       <vfs_file>C:\Users\Nadal\Desktop\stock\practica-3\src\dlistadoble.ads</vfs_file>
+    </file_marker>
+    <file_marker current="true" column=" 1" line=" 1" >
+      <vfs_project>C:\Users\Nadal\Desktop\stock\practica-3\estoc.gpr</vfs_project>
+      <vfs_file>C:\Users\Nadal\Desktop\stock\practica-3\src\main.adb</vfs_file>
     </file_marker>
   </Project>
 </Locations>

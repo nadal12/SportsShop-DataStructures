@@ -3,9 +3,9 @@ generic
    type item is private;
    with function "<"(k1, k2: in key) return boolean;
    with function ">"(k1, k2: in key) return boolean;
-package d_conjunto is
+package darbolavl is
 
-   type conjunto is limited private;
+   type arbolavl is limited private;
 
    --Excepciones
 
@@ -37,8 +37,8 @@ private
       lc, rc: pnodo;
    end record;
 
-   type conjunto is record
+   type arbolavl is record
       raiz: pnodo;
    end record;
 
-end d_conjunto;
+end darbolavl;
