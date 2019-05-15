@@ -1,6 +1,7 @@
 package destoc is
    type marca is ('Nike', 'Adidas', 'Reebok', 'Asics', 'Fila', 'Puma', 'Quiksilver', 'Kappa',
-                  'Joma', 'Converse');
+                 'Joma', 'Converse');
+
    type codi is new Natural range 0..5000000;
    type nom is new String(1..33);
    type estoc is limited private;
@@ -14,13 +15,18 @@ package destoc is
 
 private
 
+   type producte;
+
+   type pproducte is access producte;
+
    -- Definición de un producto.
    type producte is record
       n: nom;
       m: marca;
       c: codi;
       u: integer;
-      end record;
+   end record;
+
 
 
    type estoc is record
