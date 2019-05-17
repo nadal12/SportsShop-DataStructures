@@ -47,7 +47,7 @@ private
       ant: pnodo;
       sig: pnodo;
       item: pproducte;
-      key: codi;
+      k: codi;
       bl: factor_balanceo;
       lc, rc: pnodo;
    end record;

@@ -9,6 +9,22 @@ package body destoc is
    -- de unidades.
    procedure posar_producte(c: in out estoc; m: in marca; k: in codi;
                             n: in nom; unitats: in integer) is
+
+      raiz: pnodo renames c.raiz;
+      ms: pnodo renames c.ms;
+      h: boolean;
+
+   begin
+
+      --Identificar último nodo de la lista para poder asignar el pnodo ant.
+      while (sig/=null) loop
+
+      end loop;
+
+      poner(raiz, k, pproducte, h, ant¿?¿??, null);
+
+
+
    end posar_producte;
 
    -- Borra el producto a través del código dado. Sólo se tiene que poder

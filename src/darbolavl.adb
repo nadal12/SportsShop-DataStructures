@@ -31,17 +31,17 @@ package body darbolavl is
       poner(raiz, k, x, h);
    end poner;
 
-   procedure poner(p: in out pnodo; k: in key; x: in item; h: out boolean) is
+   procedure poner(p: in out pnodo; k: in key; x: in item; h: out boolean, ant: in pnodo; sig: in pnodo) is
    begin
       if p=null then
-         p:= new nodo; p.all:= (k, x, 0, null, null); -- 0 está igualado
+         p:= new nodo; p.all:= (ant, sig, x, k, 0, null, null); -- 0 está igualado
          h:= true;
       else
          if k<p.k then
-            poner(p.lc, k, x, h); --subárbol izq
+            poner(p.lc, k, x, h, ant, sig); --subárbol izq
             if h then balanceo_izq (p, h, insert_mode); end if ;
          elsif k>p.k then
-            poner(p.rc, k, x, h); --subárbol der
+            poner(p.rc, k, x, h, ant, sig); --subárbol der
             if h then balanceo_der(p, h, insert_mode); end if ;
          else -- k=p.k
             raise ya_existe;

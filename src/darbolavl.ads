@@ -28,7 +28,6 @@ private
 
    type pnodo is access nodo;
 
-   type factor_balanceo is new integer range -1..1;
 
    type nodo is record
       k: key;
