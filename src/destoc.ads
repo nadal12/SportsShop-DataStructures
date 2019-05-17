@@ -13,10 +13,22 @@ package destoc is
    procedure imprimir_productes_marca(c: in estoc; m: in marca);
    procedure imprimir_estoc_total(c: in estoc);
 
+
 private
 
-   type producte;
+   type modo is ('insert_mode', 'remove_mode');
 
+   --Procedimientos arbol.
+   procedure poner(p: in out pnodo; k: in key; x: in item; h: out boolean);
+   procedure balanceo_izq(p: in out pnodo; h: in out boolean; m: in modo);
+   procedure rebalanceo_izq(p: in out pnodo; h: out boolean; m: in modo);
+   procedure balanceo_der(p: in out pnodo; h: in out boolean; m: in modo);
+   procedure rebalanceo_der(p: in out pnodo; h: out boolean; m: in modo);
+   procedure borrar(p: in out pnodo; k: in key; h: out boolean);
+   procedure borrado_real(p: in out pnodo; h: out boolean);
+   procedure borrado_masbajo(p: in out pnodo; pmasbajo: out pnodo; h: out boolean);
+
+   type producte;
    type pproducte is access producte;
 
    -- Definición de un producto.
@@ -27,10 +39,24 @@ private
       u: integer;
    end record;
 
+   type nodo;
+   type pnodo is access nodo;
+   type factor_balanceo is new integer range -1..1;
 
+   type nodo is record
+      ant: pnodo;
+      sig: pnodo;
+      item: pproducte;
+      key: codi;
+      bl: factor_balanceo;
+      lc, rc: pnodo;
+   end record;
+
+   type marcas is array(marca) of pnodo;
 
    type estoc is record
-
+      ms: marcas;
+      raiz: pnodo;
    end record;
 
 end destoc;
