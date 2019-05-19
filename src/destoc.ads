@@ -1,4 +1,10 @@
 package destoc is
+
+   --Excepciones
+   no_existe: exception;
+   mal_uso: exception;
+   espacio_desbordado: exception;
+
    type marca is ('Nike', 'Adidas', 'Reebok', 'Asics', 'Fila', 'Puma', 'Quiksilver', 'Kappa',
                  'Joma', 'Converse');
 
@@ -18,6 +24,8 @@ private
 
    type modo is ('insert_mode', 'remove_mode');
 
+   --Funciones auxiliares
+   procedure print(p: in producte);
    --Procedimientos arbol.
    procedure poner(p: in out pnodo; k: in key; x: in item; h: out boolean);
    procedure balanceo_izq(p: in out pnodo; h: in out boolean; m: in modo);
@@ -52,7 +60,7 @@ private
       lc, rc: pnodo;
    end record;
 
-   type marcas is array(marca) of pnodo;
+   type marcas is array(marcas'Range) of pnodo;
 
    type estoc is record
       ms: marcas;

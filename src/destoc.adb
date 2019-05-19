@@ -1,7 +1,16 @@
+with Ada.Text_IO;
+use Ada.Text_IO;
+
 package body destoc is
 
    -- Prepara la estructura vacía para almacenar los productos.
    procedure estoc_buit(c: out estoc) is
+   begin
+      c.raiz := null;
+
+      for i in c.ms'Range loop
+         ms(i) := null;
+      end loop;
 
    end estoc_buid;
 
@@ -23,19 +32,35 @@ package body destoc is
 
       poner(raiz, k, pproducte, h, ant¿?¿??, null);
 
-
-
    end posar_producte;
 
    -- Borra el producto a través del código dado. Sólo se tiene que poder
    -- borrar si el número de unidades es 0.
    procedure esborrar_producte(c: in out estoc; k: in codi) is
-
+      h: boolean;
+      raiz: pnodo renames c.raiz;
+   begin
+      borrar(raiz, k, h);
    end esborrar_producte;
 
    -- Imprime todos los productos de una marca (código, nombre y unidades) sin
    -- la necesidad de seguir ningún orden.
    procedure imprimir_productes_marca(c: in estoc; m: in marca) is
+      ms: marcas renames c.ms;
+      p: pnodo;
+      i: pproducte;
+   begin
+      --Check si la lista para dicha marca existe
+      if ms(m) = null then raise no_existe; end if;
+
+      p := ms(m);
+
+      while p/= null loop
+         i := p.item;
+         print(i.all);
+         p := p.sig;
+      end loop;
+
    end imprimir_productes_marca;
 
    -- Imprime todos los productos de la tienda (código, nombre y unidades)
@@ -110,6 +135,52 @@ package body destoc is
       end if ;
    end rebalanceo_izq;
 
+
+   procedure balanceo_der(p: in out pnodo; h: in out boolean; m: in modo) is
+      -- O p.rc ha crecido en altura un nivel (por inserción)
+      -- o p.lc ha decrecido un nivel (por borrado)
+   begin
+      if p.bl=-1 then
+         p.bl:= 0;
+         if m=insert_mode then h:= false; end if ; -- else h se mantiene a true
+      elsif p.bl=0 then --creció nivel por subárbol der
+         p.bl:= 1;
+         if m=remove_mode then h:= false; end if ; -- else h se mantiene a true
+      else -- p.bl=1
+         rebalanceo_der(p, h, m);
+      end if ;
+   end balanceo_der;
+
+   procedure rebalanceo_der(p: in out pnodo; h: out boolean; m: in modo) is
+      -- O p.rc ha crecido en altura un nivel (por inserción)
+      -- o p.lc ha decrecido un nivel (por borrado)
+      a: pnodo; -- el nodo inicialmente en la raiz
+      b: pnodo; -- hijo izq de a
+      c, b2: pnodo; -- hijo der de b
+      c1, c2: pnodo; -- hijos izq y der de c
+   begin
+      a:= p; b:= a.rc;
+      if b.bl>=0 then -- promociona b
+         b2:= b.lc; -- asigna nombre
+         a.rc:= b2; b.lc:=a; p:= b; -- reestructura
+         if b.bl=0 then -- actualiza bl y h
+            a.bl:= 1; b.bl:= -1;
+            if m=remove_ mode then h:= false; end if ; -- else h se mantiene a true
+         else -- b.bl= 1
+            a.bl:= 0; b.bl:= 0;
+            if m=insert_mode then h:= false; end if ; -- else h se mantiene a true
+         end if ;
+      else
+         c:= b.rc; c1:= c.lc; c2:= c.rc; -- asigna nombres
+         b.rc:= c1; a.lc:= c2; c.lc:= b; c.rc:= a; p:= c; -- reestructura
+         if c.bl<=0 then b.bl:= 0; else b.bl:=-1; end if ; -- actualiza bl y h
+         if c.bl>=0 then a.bl:= 0; else a.bl:=1; end if ;
+         c.bl:= 0;
+         if m=insert_mode then h:= false; end if; -- else h se mantiene a true
+      end if;
+   end rebalanceo_der;
+
+
    procedure borrar(p: in out pnodo; k: in key; h: out boolean) is
    begin
       if p=null then raise no_existe; end if ;
@@ -128,6 +199,17 @@ package body destoc is
       -- Prec.: p.k = k
       pmasbajo: pnodo;
    begin
+
+      --Enlazar pnodo anterior con siguiente si toca
+      if p.ant /= null then
+         p.ant.sig := p.sig;
+      end if;
+
+      if p.sig /= null then
+         p.sig.ant := p.ant;
+      end if;
+
+      --Borrado segun cantidad de hijos que tenga el pnodo
       if p.lc= null and p.rc= null then
          p:= null; h:= true;
       elsif p.lc =null and p.rc/=null then
@@ -152,4 +234,14 @@ package body destoc is
          pmasbajo:= p; p:= p.rc; h:= true;
       end if ;
    end borrado_masbajo;
+
+   procedure print(p: in producte) is
+   begin
+      Put_Line("Nombre: " & p.n);
+      Put_Line("Marca: " & p.m'Image);
+      Put_Line("Codigo: " & p.c'Image);
+      Put_Line("Unidades: " & p.u'Image);
+      New_Line;
+   end print;
+
 end destoc;
