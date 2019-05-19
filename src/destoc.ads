@@ -60,7 +60,7 @@ private
       lc, rc: pnodo;
    end record;
 
-   type marcas is array(marcas'Range) of pnodo;
+   type marcas is array(marca'Range) of pnodo;
 
    type estoc is record
       ms: marcas;

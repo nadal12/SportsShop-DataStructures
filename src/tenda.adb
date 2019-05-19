@@ -1,54 +1,92 @@
 with Ada.Text_IO;
 use Ada.Text_IO;
 pragma Wide_Character_Encoding(UTF8);
+with destoc;
+use destoc;
 
 procedure tenda is
-
-   --Procedimientos
-   procedure imprimir_menu is
-
-   begin
-
-      Put_Line("--------------------------------------------------------------");
-      Put_Line("-          MENU PRINCIPAL DE LA GESTION DEL STOCK            -");
-      Put_Line("--------------------------------------------------------------");
-      New_line;
-      Put_Line("1. Anadir productos.");
-      Put_Line("2. Eliminar productos.");
-      Put_line("3. Mostrar productos de una marca.");
-      Put_line("4. Mostras todos los productos.");
-      Put_Line("5. Salir.");
-      New_line;
-
-   end imprimir_menu;
-
-   --Declaración de variables.
-   escape: boolean := false;
-   option: Integer;
-
+   s: estoc;
 begin
 
-   while not escape loop
+   --INICIALIZACIÓN DE STOCK
+   Put_Line("Inicialización de un stock..");
+   Put_Line("estoc_buit(s);");
+   estoc_buit(s);
+   New_Line;
 
-      imprimir_menu;
-      Put("Seleccione un valor: ");
-      option := Integer'Value(Get_Line);
+   --IMPRIMIR STOCK VACIO
+   Put_Line("Imprimir contenido del stock vacio..");
+   Put_Line("Imprimir total stock.. ");
+   Put_Line("imprimir_estoc_total(s);");
+   imprimir_estoc_total(s);
+   New_Line;
+
+   Put_Line("Imprimir stock por marcas..");
+   imprimir:
+   for i in marca'Range loop
+      Put_Line("imprimir_productes_marcas(s, "& i'Image &");");
+      imprimir_productes_marcas(s, i);
+      New_Line;
+   end loop imprimir;
+
+   --CARGAR STOCK CON 100 PRODUCTOS
+   Put_Line("Cargar 100 productos nuevos; diez de cada marca..");
+   Put_Line("posar_producte(estoc, marca, codigo, unidades);");
+
+   Poner:
+   for i in 0..99 loop
+      posar_producte(s, marca'Val(i mod 10), i, (i mod 10)*5 + 50);
+   end loop Poner;
+   New_Line;
+
+   --IMPRIMIR STOCK CON ELEMENTOS
+   Put_Line("Imprimir total stock.. ");
+   Put_Line("imprimir_estoc_total(s);");
+   imprimir_estoc_total(s);
+   New_Line;
+
+   Put_Line("Imprimir stock por marcas..");
+   imprimir:
+   for i in marca'Range loop
+      Put_Line("imprimir_productes_marcas(s, "& i'Image &");");
+      imprimir_productes_marcas(s, i);
+      New_Line;
+   end loop imprimir;
+
+   --BORRAR PRODUCTOS DEL STOCK
+   Put_Line("Borrar productos por código..");
+   borrar:
+   for i in (15, 43, 65, 86, 98) loop
+      Put_line("esborrar_producte(s, "&i&")");
+      esborrar_producte(s, i);
+      --IMPRIMIR STOCK DESPUÉS DE BORRAR UN ELEMENTO
+      Put_Line("Imprimir total stock después de borrado de producto de código "&i&".. ");
+      Put_Line("imprimir_estoc_total(s);");
+      imprimir_estoc_total(s);
       New_Line;
 
-      case option is
+      Put_Line("Imprimir stock por marcas después de borrado de producto de código "&i&"..");
+      imprimir:
+      for i in marca'Range loop
+         Put_Line("imprimir_productes_marcas(s, "& i'Image &");");
+         imprimir_productes_marcas(s, i);
+         New_Line;
+      end loop imprimir;
+   end loop borrar;
+   New_Line;
 
-         when 1 => null;
-         when 2 => null;
-         when 3 => null;
-         when 4 => null;
-         when 5 => escape:=true;
-         when others => Put("Valor incorrecto.");
-            New_Line;
-      end case;
+   --INTRODUCIR PRODUCTO CON UN CODIGO YA EXISTENTE
+   Put_Line("Introducir producto con código ya existente..");
+   Put_Line("posar_producte(estoc, marca, 50, unidades)");
+   posar_producte(s, marca'Val(3), 50, 208);
+   New_Line;
 
-
-   end loop;
-
-
+   --BORRAR PRODUCTO CON UN CODIGO INEXISTENTE
+   Put_Line("Borrar un producto inexistente..");
+   Put_Line("esborrar_producte(s, 15)");
+   esborrar_producte(s, 15);
+   Put_Line("esborrar_producte(s, 100)");
+   esborrar_producte(s, 100);
+   New_Line;
 
 end tenda;

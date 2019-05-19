@@ -237,11 +237,8 @@ package body destoc is
 
    procedure print(p: in producte) is
    begin
-      Put_Line("Nombre: " & p.n);
-      Put_Line("Marca: " & p.m'Image);
-      Put_Line("Codigo: " & p.c'Image);
-      Put_Line("Unidades: " & p.u'Image);
-      New_Line;
+      Put_Line("Nombre: " & p.n"|Marca: " & p.m'Image"|Codigo: " &
+                 p.c'Image"|Unidades: " & p.u'Image);
    end print;
 
 end destoc;
