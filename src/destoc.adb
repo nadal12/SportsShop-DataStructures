@@ -23,14 +23,15 @@ package body destoc is
       ms: pnodo renames c.ms;
       h: boolean;
 
+      p:= new producte;
+
    begin
 
-      --Identificar último nodo de la lista para poder asignar el pnodo ant.
-      while (sig/=null) loop
+      --Se asignan los datos al nuevo producto.
+      p.all(n, m, k, unitats);
 
-      end loop;
-
-      poner(raiz, k, pproducte, h, ant¿?¿??, null);
+      --Se pone el producto en la estructura.
+      poner(raiz, k, p, h, null, ms.ant);
 
    end posar_producte;
 
@@ -67,12 +68,17 @@ package body destoc is
    -- ordenados ascendientemente por su código.
    procedure imprimir_estoc_total(c: in estoc) is
 
+      raiz: pnodo renames c.raiz;
+   begin
+
+
+
    end imprimir_estoc_total;
 
-   procedure poner(p: in out pnodo; k: in key; x: in item; h: out boolean) is
+   procedure poner(p: in out pnodo; k: in key; x: in item; h: out boolean, ant: in pnodo; sig: in pnodo) is
    begin
       if p=null then
-         p:= new nodo; p.all:= (k, x, 0, null, null); -- 0 está igualado
+         p:= new nodo; p.all:= (ant, sig, x, k, 0, null, null); -- 0 está igualado
          h:= true;
       else
          if k<p.k then

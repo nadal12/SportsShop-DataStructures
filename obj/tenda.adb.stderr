@@ -1,0 +1,13 @@
+tenda.adb:38:11: expected type "codi" defined at destoc.ads:10
+tenda.adb:38:11: found type "Standard.Integer"
+tenda.adb:39:46: expected type "codi" defined at destoc.ads:10
+tenda.adb:39:46: found type "Standard.Integer"
+tenda.adb:60:13: no unique type for aggregate
+tenda.adb:60:13: expected a discrete type
+tenda.adb:60:13: found a composite type
+tenda.adb:62:28: expected type "codi" defined at destoc.ads:10
+tenda.adb:62:28: found an integer type
+destoc.ads:27:26: "producte" is undefined
+destoc.ads:29:30: "pnodo" is undefined (more references follow)
+destoc.ads:29:43: "key" is undefined (more references follow)
+destoc.ads:29:54: "item" is undefined

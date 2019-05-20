@@ -5,8 +5,7 @@ package destoc is
    mal_uso: exception;
    espacio_desbordado: exception;
 
-   type marca is ('Nike', 'Adidas', 'Reebok', 'Asics', 'Fila', 'Puma', 'Quiksilver', 'Kappa',
-                 'Joma', 'Converse');
+   type marca is (Nike, Adidas, Reebok, Asics, Fila, Puma, Quiksilver, Kappa, Joma, Converse);
 
    type codi is new Natural range 0..5000000;
    type nom is new String(1..33);
@@ -22,7 +21,7 @@ package destoc is
 
 private
 
-   type modo is ('insert_mode', 'remove_mode');
+   type modo is (insert_mode, remove_mode);
 
    --Funciones auxiliares
    procedure print(p: in producte);
