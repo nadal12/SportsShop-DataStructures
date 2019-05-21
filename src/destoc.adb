@@ -5,6 +5,9 @@ package body destoc is
 
    -- Prepara la estructura vacía para almacenar los productos.
    procedure estoc_buit(c: out estoc) is
+
+      ms: marcas renames c.ms;
+
    begin
       c.raiz := null;
 
@@ -12,7 +15,7 @@ package body destoc is
          ms(i) := null;
       end loop;
 
-   end estoc_buid;
+   end estoc_buit;
 
    -- Introduce un producto con una marca, un código, un nombre y un número
    -- de unidades.
@@ -20,18 +23,18 @@ package body destoc is
                             n: in nom; unitats: in integer) is
 
       raiz: pnodo renames c.raiz;
-      ms: pnodo renames c.ms;
+      ms: marcas renames c.ms;
       h: boolean;
 
-      p:= new producte;
-
    begin
+
+      p:= new producte;
 
       --Se asignan los datos al nuevo producto.
       p.all(n, m, k, unitats);
 
       --Se pone el producto en la estructura.
-      poner(raiz, k, p, h, null, ms.ant);
+      poner(raiz, k, p, h);
 
    end posar_producte;
 
@@ -69,13 +72,26 @@ package body destoc is
    procedure imprimir_estoc_total(c: in estoc) is
 
       raiz: pnodo renames c.raiz;
+
    begin
 
+      --Aplicar recorrido inorden sobre el arbol del estoc.
+      if raiz.lc/=null then
+         raiz := raiz.lc;
+         imprimir_estoc_total(c);
+      end if;
 
+      --Operación de procesamiento de nodo (o visita).
+      print(raiz.item.all);
+
+      if raiz.rc/=null then
+         raiz:=raiz.rc;
+         imprimir_estoc_total(c);
+      end if;
 
    end imprimir_estoc_total;
 
-   procedure poner(p: in out pnodo; k: in key; x: in item; h: out boolean, ant: in pnodo; sig: in pnodo) is
+   procedure poner(p: in out pnodo; k: in key; x: in item; h: out boolean; ant: in pnodo; sig: in pnodo) is
    begin
       if p=null then
          p:= new nodo; p.all:= (ant, sig, x, k, 0, null, null); -- 0 está igualado
@@ -102,11 +118,9 @@ package body destoc is
       if p.bl=1 then
          p.bl:= 0;
          if m=insert_mode then h:= false; end if ; -- else h se mantiene a
-         true
       elsif p.bl=0 then --creció nivel por subárbol izq
          p.bl:= -1;
          if m=remove_mode then h:= false; end if ; -- else h se mantiene a
-         true
       else -- p.bl=-1
          rebalanceo_izq(p, h, m);
       end if ;
@@ -114,7 +128,7 @@ package body destoc is
 
    procedure rebalanceo_izq(p: in out pnodo; h: out boolean; m: in modo) is
       -- O p.lc ha crecido en altura un nivel (por inserción) o p.rc ha decrecido un nivel (por
-      borrado)
+      --borrado)
         a: pnodo; -- el nodo inicialmente en la raiz
       b: pnodo; -- hijo izq de a
       c, b2: pnodo; -- hijo der de b
@@ -126,7 +140,7 @@ package body destoc is
          a.lc:= b2; b.rc:=a; p:= b; -- reestructura
          if b.bl=0 then -- actualiza bl y h
             a.bl:= -1; b.bl:= 1;
-            if m=remove_ mode then h:= false; end if ; -- else h se mantiene a true
+            if m=remove_mode then h:= false; end if ; -- else h se mantiene a true
          else -- b.bl= -1
             a.bl:= 0; b.bl:= 0;
             if m=insert_mode then h:= false; end if ; -- else h se mantiene a true
@@ -171,7 +185,7 @@ package body destoc is
          a.rc:= b2; b.lc:=a; p:= b; -- reestructura
          if b.bl=0 then -- actualiza bl y h
             a.bl:= 1; b.bl:= -1;
-            if m=remove_ mode then h:= false; end if ; -- else h se mantiene a true
+            if m=remove_mode then h:= false; end if ; -- else h se mantiene a true
          else -- b.bl= 1
             a.bl:= 0; b.bl:= 0;
             if m=insert_mode then h:= false; end if ; -- else h se mantiene a true
@@ -243,8 +257,8 @@ package body destoc is
 
    procedure print(p: in producte) is
    begin
-      Put_Line("Nombre: " & p.n"|Marca: " & p.m'Image"|Codigo: " &
-                 p.c'Image"|Unidades: " & p.u'Image);
+      Put_Line("Nombre: " & p.n &"|Marca: " & p.m'Image&"|Codigo: " &
+                 p.c'Image&"|Unidades: " & p.u'Image);
    end print;
 
 end destoc;

@@ -1,7 +1,6 @@
 <?xml version="1.0"?>
 <Locations >
-  <Project>
-    <vfs_file>C:\Users\Nadal\Desktop\p3\practica-3\estoc.gpr</vfs_file>
+  <Project >
     <file_marker column=" 1" line=" 1" >
       <vfs_project>C:\Users\Nadal\Desktop\p3\practica-3\estoc.gpr</vfs_project>
       <vfs_file>C:\Users\Nadal\Desktop\p3\practica-3\src\darbolavl.adb</vfs_file>
@@ -14,7 +13,7 @@
       <vfs_project>C:\Users\Nadal\Desktop\p3\practica-3\estoc.gpr</vfs_project>
       <vfs_file>C:\Users\Nadal\Desktop\p3\practica-3\src\destoc.ads</vfs_file>
     </file_marker>
-    <file_marker column=" 1" line=" 23" >
+    <file_marker column=" 1" line=" 22" >
       <vfs_project>C:\Users\Nadal\Desktop\p3\practica-3\estoc.gpr</vfs_project>
       <vfs_file>C:\Users\Nadal\Desktop\p3\practica-3\src\destoc.ads</vfs_file>
     </file_marker>
@@ -42,9 +41,225 @@
       <vfs_project>C:\Users\Nadal\Desktop\p3\practica-3\estoc.gpr</vfs_project>
       <vfs_file>C:\Users\Nadal\Desktop\p3\practica-3\src\dlistadoble.ads</vfs_file>
     </file_marker>
-    <file_marker current="true" column=" 1" line=" 1" >
+    <file_marker column=" 1" line=" 1" >
       <vfs_project>C:\Users\Nadal\Desktop\p3\practica-3\estoc.gpr</vfs_project>
       <vfs_file>C:\Users\Nadal\Desktop\p3\practica-3\src\dlistadoble.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>C:\Users\Nadal\Desktop\p3\practica-3\estoc.gpr</vfs_project>
+      <vfs_file>C:\Users\Nadal\Desktop\p3\practica-3\src\darbolavl.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 19" line=" 29" >
+      <vfs_project>C:\Users\Nadal\Desktop\p3\practica-3\estoc.gpr</vfs_project>
+      <vfs_file>C:\Users\Nadal\Desktop\p3\practica-3\src\destoc.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>C:\Users\Nadal\Desktop\p3\practica-3\estoc.gpr</vfs_project>
+      <vfs_file>C:\Users\Nadal\Desktop\p3\practica-3\src\darbolavl.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 7" line=" 44" >
+      <vfs_project>C:\Users\Nadal\Desktop\p3\practica-3\estoc.gpr</vfs_project>
+      <vfs_file>C:\Users\Nadal\Desktop\p3\practica-3\src\destoc.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 14" line=" 34" >
+      <vfs_project />
+      <vfs_file>C:\Users\Nadal\Desktop\p3\practica-3\src\destoc.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 14" line=" 190" >
+      <vfs_project />
+      <vfs_file>C:\Users\Nadal\Desktop\p3\practica-3\src\destoc.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 7" line=" 44" >
+      <vfs_project>C:\Users\Nadal\Desktop\p3\practica-3\estoc.gpr</vfs_project>
+      <vfs_file>C:\Users\Nadal\Desktop\p3\practica-3\src\destoc.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 14" line=" 34" >
+      <vfs_project />
+      <vfs_file>C:\Users\Nadal\Desktop\p3\practica-3\src\destoc.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 7" line=" 44" >
+      <vfs_project>C:\Users\Nadal\Desktop\p3\practica-3\estoc.gpr</vfs_project>
+      <vfs_file>C:\Users\Nadal\Desktop\p3\practica-3\src\destoc.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 14" line=" 34" >
+      <vfs_project />
+      <vfs_file>C:\Users\Nadal\Desktop\p3\practica-3\src\destoc.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 7" line=" 34" >
+      <vfs_project>C:\Users\Nadal\Desktop\p3\practica-3\estoc.gpr</vfs_project>
+      <vfs_file>C:\Users\Nadal\Desktop\p3\practica-3\src\destoc.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 14" line=" 29" >
+      <vfs_project />
+      <vfs_file>C:\Users\Nadal\Desktop\p3\practica-3\src\destoc.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 78" >
+      <vfs_project />
+      <vfs_file>C:\Users\Nadal\Desktop\p3\practica-3\src\destoc.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 81" >
+      <vfs_project>C:\Users\Nadal\Desktop\p3\practica-3\estoc.gpr</vfs_project>
+      <vfs_file>C:\Users\Nadal\Desktop\p3\practica-3\src\destoc.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>C:\Users\Nadal\Desktop\p3\practica-3\estoc.gpr</vfs_project>
+      <vfs_file>C:\Users\Nadal\Desktop\p3\practica-3\src\darbolavl.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 81" >
+      <vfs_project>C:\Users\Nadal\Desktop\p3\practica-3\estoc.gpr</vfs_project>
+      <vfs_file>C:\Users\Nadal\Desktop\p3\practica-3\src\destoc.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>C:\Users\Nadal\Desktop\p3\practica-3\estoc.gpr</vfs_project>
+      <vfs_file>C:\Users\Nadal\Desktop\p3\practica-3\src\darbolavl.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 10" line=" 61" >
+      <vfs_project>C:\Users\Nadal\Desktop\p3\practica-3\estoc.gpr</vfs_project>
+      <vfs_file>C:\Users\Nadal\Desktop\p3\practica-3\src\destoc.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 14" line=" 27" >
+      <vfs_project />
+      <vfs_file>C:\Users\Nadal\Desktop\p3\practica-3\src\destoc.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 14" line=" 244" >
+      <vfs_project />
+      <vfs_file>C:\Users\Nadal\Desktop\p3\practica-3\src\destoc.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 7" line=" 74" >
+      <vfs_project>C:\Users\Nadal\Desktop\p3\practica-3\estoc.gpr</vfs_project>
+      <vfs_file>C:\Users\Nadal\Desktop\p3\practica-3\src\destoc.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>C:\Users\Nadal\Desktop\p3\practica-3\estoc.gpr</vfs_project>
+      <vfs_file>C:\Users\Nadal\Desktop\p3\practica-3\src\tenda.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 40" line=" 44" >
+      <vfs_project>C:\Users\Nadal\Desktop\p3\practica-3\estoc.gpr</vfs_project>
+      <vfs_file>C:\Users\Nadal\Desktop\p3\practica-3\src\tenda.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 26" line=" 13" >
+      <vfs_project>C:\Users\Nadal\Desktop\p3\practica-3\estoc.gpr</vfs_project>
+      <vfs_file>C:\Users\Nadal\Desktop\p3\practica-3\src\tenda.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 40" line=" 80" >
+      <vfs_project>C:\Users\Nadal\Desktop\p3\practica-3\estoc.gpr</vfs_project>
+      <vfs_file>C:\Users\Nadal\Desktop\p3\practica-3\src\tenda.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 4" line=" 50" >
+      <vfs_project>C:\Users\Nadal\Desktop\p3\practica-3\estoc.gpr</vfs_project>
+      <vfs_file>C:\Users\Nadal\Desktop\p3\practica-3\src\tenda.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 17" line=" 70" >
+      <vfs_project>C:\Users\Nadal\Desktop\p3\practica-3\estoc.gpr</vfs_project>
+      <vfs_file>C:\Users\Nadal\Desktop\p3\practica-3\src\tenda.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 48" line=" 69" >
+      <vfs_project>C:\Users\Nadal\Desktop\p3\practica-3\estoc.gpr</vfs_project>
+      <vfs_file>C:\Users\Nadal\Desktop\p3\practica-3\src\tenda.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 19" line=" 8" >
+      <vfs_project>C:\Users\Nadal\Desktop\p3\practica-3\estoc.gpr</vfs_project>
+      <vfs_file>C:\Users\Nadal\Desktop\p3\practica-3\src\destoc.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 42" line=" 24" >
+      <vfs_project>C:\Users\Nadal\Desktop\p3\practica-3\estoc.gpr</vfs_project>
+      <vfs_file>C:\Users\Nadal\Desktop\p3\practica-3\src\destoc.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 19" line=" 8" >
+      <vfs_project>C:\Users\Nadal\Desktop\p3\practica-3\estoc.gpr</vfs_project>
+      <vfs_file>C:\Users\Nadal\Desktop\p3\practica-3\src\destoc.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 13" >
+      <vfs_project>C:\Users\Nadal\Desktop\p3\practica-3\estoc.gpr</vfs_project>
+      <vfs_file>C:\Users\Nadal\Desktop\p3\practica-3\src\destoc.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 19" line=" 8" >
+      <vfs_project>C:\Users\Nadal\Desktop\p3\practica-3\estoc.gpr</vfs_project>
+      <vfs_file>C:\Users\Nadal\Desktop\p3\practica-3\src\destoc.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 65" line=" 18" >
+      <vfs_project>C:\Users\Nadal\Desktop\p3\practica-3\estoc.gpr</vfs_project>
+      <vfs_file>C:\Users\Nadal\Desktop\p3\practica-3\src\destoc.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 19" line=" 8" >
+      <vfs_project>C:\Users\Nadal\Desktop\p3\practica-3\estoc.gpr</vfs_project>
+      <vfs_file>C:\Users\Nadal\Desktop\p3\practica-3\src\destoc.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 17" line=" 24" >
+      <vfs_project>C:\Users\Nadal\Desktop\p3\practica-3\estoc.gpr</vfs_project>
+      <vfs_file>C:\Users\Nadal\Desktop\p3\practica-3\src\destoc.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 19" line=" 8" >
+      <vfs_project>C:\Users\Nadal\Desktop\p3\practica-3\estoc.gpr</vfs_project>
+      <vfs_file>C:\Users\Nadal\Desktop\p3\practica-3\src\destoc.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 9" >
+      <vfs_project>C:\Users\Nadal\Desktop\p3\practica-3\estoc.gpr</vfs_project>
+      <vfs_file>C:\Users\Nadal\Desktop\p3\practica-3\src\destoc.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 17" line=" 24" >
+      <vfs_project>C:\Users\Nadal\Desktop\p3\practica-3\estoc.gpr</vfs_project>
+      <vfs_file>C:\Users\Nadal\Desktop\p3\practica-3\src\destoc.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 9" >
+      <vfs_project>C:\Users\Nadal\Desktop\p3\practica-3\estoc.gpr</vfs_project>
+      <vfs_file>C:\Users\Nadal\Desktop\p3\practica-3\src\destoc.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 17" line=" 24" >
+      <vfs_project>C:\Users\Nadal\Desktop\p3\practica-3\estoc.gpr</vfs_project>
+      <vfs_file>C:\Users\Nadal\Desktop\p3\practica-3\src\destoc.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 7" line=" 29" >
+      <vfs_project>C:\Users\Nadal\Desktop\p3\practica-3\estoc.gpr</vfs_project>
+      <vfs_file>C:\Users\Nadal\Desktop\p3\practica-3\src\tenda.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 83" line=" 64" >
+      <vfs_project>C:\Users\Nadal\Desktop\p3\practica-3\estoc.gpr</vfs_project>
+      <vfs_file>C:\Users\Nadal\Desktop\p3\practica-3\src\tenda.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 46" line=" 39" >
+      <vfs_project>C:\Users\Nadal\Desktop\p3\practica-3\estoc.gpr</vfs_project>
+      <vfs_file>C:\Users\Nadal\Desktop\p3\practica-3\src\tenda.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 43" line=" 82" >
+      <vfs_project>C:\Users\Nadal\Desktop\p3\practica-3\estoc.gpr</vfs_project>
+      <vfs_file>C:\Users\Nadal\Desktop\p3\practica-3\src\tenda.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 46" line=" 39" >
+      <vfs_project>C:\Users\Nadal\Desktop\p3\practica-3\estoc.gpr</vfs_project>
+      <vfs_file>C:\Users\Nadal\Desktop\p3\practica-3\src\tenda.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 90" line=" 64" >
+      <vfs_project>C:\Users\Nadal\Desktop\p3\practica-3\estoc.gpr</vfs_project>
+      <vfs_file>C:\Users\Nadal\Desktop\p3\practica-3\src\tenda.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 46" line=" 39" >
+      <vfs_project>C:\Users\Nadal\Desktop\p3\practica-3\estoc.gpr</vfs_project>
+      <vfs_file>C:\Users\Nadal\Desktop\p3\practica-3\src\tenda.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 20" line=" 60" >
+      <vfs_project>C:\Users\Nadal\Desktop\p3\practica-3\estoc.gpr</vfs_project>
+      <vfs_file>C:\Users\Nadal\Desktop\p3\practica-3\src\tenda.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 28" line=" 62" >
+      <vfs_project>C:\Users\Nadal\Desktop\p3\practica-3\estoc.gpr</vfs_project>
+      <vfs_file>C:\Users\Nadal\Desktop\p3\practica-3\src\tenda.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 46" line=" 39" >
+      <vfs_project>C:\Users\Nadal\Desktop\p3\practica-3\estoc.gpr</vfs_project>
+      <vfs_file>C:\Users\Nadal\Desktop\p3\practica-3\src\tenda.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 64" line=" 35" >
+      <vfs_project>C:\Users\Nadal\Desktop\p3\practica-3\estoc.gpr</vfs_project>
+      <vfs_file>C:\Users\Nadal\Desktop\p3\practica-3\src\tenda.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 4" line=" 9" >
+      <vfs_project>C:\Users\Nadal\Desktop\p3\practica-3\estoc.gpr</vfs_project>
+      <vfs_file>C:\Users\Nadal\Desktop\p3\practica-3\src\tenda.adb</vfs_file>
+    </file_marker>
+    <file_marker current="true" column=" 11" line=" 38" >
+      <vfs_project>C:\Users\Nadal\Desktop\p3\practica-3\estoc.gpr</vfs_project>
+      <vfs_file>C:\Users\Nadal\Desktop\p3\practica-3\src\tenda.adb</vfs_file>
     </file_marker>
   </Project>
   <Project >
