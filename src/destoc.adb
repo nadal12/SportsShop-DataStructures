@@ -3,6 +3,9 @@ use Ada.Text_IO;
 
 package body destoc is
 
+   package mi_enum is new Ada.Text_IO.Enumeration_IO(marca);
+   use mi_enum;
+
    -- Prepara la estructura vacía para almacenar los productos.
    procedure estoc_buit(c: out estoc) is
 
@@ -25,16 +28,27 @@ package body destoc is
       raiz: pnodo renames c.raiz;
       ms: marcas renames c.ms;
       h: boolean;
+      p: pproducte;
+      paux: pnodo;
 
    begin
 
       p:= new producte;
 
       --Se asignan los datos al nuevo producto.
-      p.all(n, m, k, unitats);
+      p.all := (n, m, k, unitats);
 
       --Se pone el producto en la estructura.
-      poner(raiz, k, p, h);
+      poner(raiz, k, p, h, ms(m), paux);
+      if paux /= null then
+         ms(m) := paux;
+
+         if paux.sig /= null then
+            paux.sig.ant := paux;
+         end if;
+
+      end if;
+
 
    end posar_producte;
 
@@ -43,8 +57,25 @@ package body destoc is
    procedure esborrar_producte(c: in out estoc; k: in codi) is
       h: boolean;
       raiz: pnodo renames c.raiz;
+      ms: marcas renames c.ms;
+      paux: pnodo;
    begin
-      borrar(raiz, k, h);
+      borrar(raiz, k, h, paux);
+
+      if paux/=null then
+         --Enlazar pnodo anterior con siguiente si toca
+         if paux.ant /= null then
+            paux.ant.sig := paux.sig;
+         else
+            --paux.sig.ant := null;
+            ms(paux.item.m) := paux.sig;
+         end if;
+
+         if paux.sig /= null then
+            paux.sig.ant := paux.ant;
+         end if;
+      end if;
+
    end esborrar_producte;
 
    -- Imprime todos los productos de una marca (código, nombre y unidades) sin
@@ -55,7 +86,7 @@ package body destoc is
       i: pproducte;
    begin
       --Check si la lista para dicha marca existe
-      if ms(m) = null then raise no_existe; end if;
+      if ms(m) = null then Put_Line("Estoc de aquesta marca buit"); return; end if;
 
       p := ms(m);
 
@@ -72,39 +103,51 @@ package body destoc is
    procedure imprimir_estoc_total(c: in estoc) is
 
       raiz: pnodo renames c.raiz;
+      r: pnodo := raiz;
+
+   begin
+
+      if r = null then Put_Line("Estoc buit"); return; end if;
+
+      imprimir_estoc_total(r);
+
+   end imprimir_estoc_total;
+
+   procedure imprimir_estoc_total(r: in out pnodo) is
+
 
    begin
 
       --Aplicar recorrido inorden sobre el arbol del estoc.
-      if raiz.lc/=null then
-         raiz := raiz.lc;
-         imprimir_estoc_total(c);
+      if r.lc/=null then
+         imprimir_estoc_total(r.lc);
       end if;
 
       --Operación de procesamiento de nodo (o visita).
-      print(raiz.item.all);
+      print(r.item.all);
 
-      if raiz.rc/=null then
-         raiz:=raiz.rc;
-         imprimir_estoc_total(c);
+      if r.rc/=null then
+         imprimir_estoc_total(r.rc);
       end if;
 
    end imprimir_estoc_total;
 
-   procedure poner(p: in out pnodo; k: in key; x: in item; h: out boolean; ant: in pnodo; sig: in pnodo) is
+
+   procedure poner(p: in out pnodo; k: in codi; x: in pproducte; h: out boolean; sig: in pnodo; aux: out pnodo) is
    begin
       if p=null then
-         p:= new nodo; p.all:= (ant, sig, x, k, 0, null, null); -- 0 está igualado
+         p:= new nodo; p.all:= (null, sig, x, k, 0, null, null); -- 0 está igualado
+         aux := p;
          h:= true;
       else
          if k<p.k then
-            poner(p.lc, k, x, h); --subárbol izq
+            poner(p.lc, k, x, h, sig, aux); --subárbol izq
             if h then balanceo_izq (p, h, insert_mode); end if ;
          elsif k>p.k then
-            poner(p.rc, k, x, h); --subárbol der
+            poner(p.rc, k, x, h, sig, aux); --subárbol der
             if h then balanceo_der(p, h, insert_mode); end if ;
          else -- k=p.k
-            raise ya_existe;
+            Put_Line("Producto ya existente"); return;
          end if ;
       end if ;
    exception
@@ -201,33 +244,27 @@ package body destoc is
    end rebalanceo_der;
 
 
-   procedure borrar(p: in out pnodo; k: in key; h: out boolean) is
+   procedure borrar(p: in out pnodo; k: in codi; h: out boolean; paux: out pnodo) is
    begin
-      if p=null then raise no_existe; end if ;
+
+      if p=null then Put_Line("No existe"); h:= false; return; end if ;
       if k<p.k then
-         borrar(p.lc, k, h);
+         borrar(p.lc, k, h, paux);
          if h then balanceo_der(p, h, remove_mode); end if ;
       elsif k>p.k then
-         borrar(p.rc, k, h);
+         borrar(p.rc, k, h, paux);
          if h then balanceo_izq(p, h, remove_mode); end if ;
       else -- k=p.k
-         borrado_real(p, h);
+         borrado_real(p, h, paux);
       end if ;
    end borrar;
 
-   procedure borrado_real(p: in out pnodo; h: out boolean) is
+   procedure borrado_real(p: in out pnodo; h: out boolean; paux: out pnodo) is
       -- Prec.: p.k = k
       pmasbajo: pnodo;
    begin
 
-      --Enlazar pnodo anterior con siguiente si toca
-      if p.ant /= null then
-         p.ant.sig := p.sig;
-      end if;
-
-      if p.sig /= null then
-         p.sig.ant := p.ant;
-      end if;
+      paux := p;
 
       --Borrado segun cantidad de hijos que tenga el pnodo
       if p.lc= null and p.rc= null then
@@ -256,9 +293,10 @@ package body destoc is
    end borrado_masbajo;
 
    procedure print(p: in producte) is
+      s: string(1..33);
    begin
-      Put_Line("Nombre: " & p.n &"|Marca: " & p.m'Image&"|Codigo: " &
-                 p.c'Image&"|Unidades: " & p.u'Image);
+      mi_enum.put(s, p.m);
+      Put_Line("Nombre: " & s & "|Marca: " & natural(p.c)'Image & " |Codigo: " & p.c'Image & " | Unidades: " & p.u'Image);
    end print;
 
 end destoc;

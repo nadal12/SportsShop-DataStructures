@@ -12,9 +12,9 @@ package darbolavl is
 
    --Operaciones
    procedure cvacio (s: out conjunto);
-   procedure consultar(s: in conjunto; k: in key; x: out item);
-   procedure consultar(s: in pnodo; k: in key; x: out item);
-   procedure poner(s: in out conjunto; k: in key; x: in item);
+   procedure consultar(s: in conjunto; k: in codi; x: out item);
+   procedure consultar(s: in pnodo; k: in codi; x: out item);
+   procedure poner(s: in out conjunto; k: in codi; x: in item);
    procedure poner(p: in out pnodo; k: in key; x: in item; h: out boolean);
    procedure balanceo_izq(p: in out pnodo; h: in out boolean; m: in modo);
    procedure rebalanceo_izq(p: in out pnodo; h: out boolean; m: in modo);

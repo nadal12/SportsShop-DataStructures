@@ -1,8 +1,9 @@
-generic
-      type item is private;
-      type key is private;
-      with function "<"(k1, k2: in key) return boolean;
-      with function ">"(k1, k2: in key) return boolean;
+--  generic
+--        type item is private;
+--        type key is private;
+--        with function "<"(k1, k2: in key) return boolean;
+--        with function ">"(k1, k2: in key) return boolean;
+with ada.Strings.Unbounded;
 
 package destoc is
 
@@ -13,6 +14,7 @@ package destoc is
    type nom is new String(1..33);
 
    --Excepciones
+   ya_existe: exception;
    no_existe: exception;
    mal_uso: exception;
    espacio_desbordado: exception;
@@ -63,16 +65,16 @@ private
 
    --Funciones auxiliares
    procedure print(p: in producte);
+   procedure imprimir_estoc_total(r: in out pnodo);
 
    --Procedimientos arbol.
-   procedure poner(p: in out pnodo; k: in key; x: in item; h: out boolean);
+   procedure poner(p: in out pnodo; k: in codi; x: in pproducte; h: out boolean; sig: in pnodo; aux: out pnodo);
    procedure balanceo_izq(p: in out pnodo; h: in out boolean; m: in modo);
    procedure rebalanceo_izq(p: in out pnodo; h: out boolean; m: in modo);
    procedure balanceo_der(p: in out pnodo; h: in out boolean; m: in modo);
    procedure rebalanceo_der(p: in out pnodo; h: out boolean; m: in modo);
-   procedure borrar(p: in out pnodo; k: in key; h: out boolean);
-   procedure borrado_real(p: in out pnodo; h: out boolean);
+   procedure borrar(p: in out pnodo; k: in codi; h: out boolean; paux: out pnodo);
+   procedure borrado_real(p: in out pnodo; h: out boolean; paux: out pnodo);
    procedure borrado_masbajo(p: in out pnodo; pmasbajo: out pnodo; h: out boolean);
-
 
 end destoc;
