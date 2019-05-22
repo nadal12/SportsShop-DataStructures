@@ -37,7 +37,7 @@ package ada_main is
    pragma Export (C, main, "main");
 
    type Version_32 is mod 2 ** 32;
-   u00001 : constant Version_32 := 16#bff1e065#;
+   u00001 : constant Version_32 := 16#5011db51#;
    pragma Export (C, u00001, "tendaB");
    u00002 : constant Version_32 := 16#050ff2f0#;
    pragma Export (C, u00002, "system__standard_libraryB");
@@ -307,9 +307,9 @@ package ada_main is
    pragma Export (C, u00134, "system__file_ioS");
    u00135 : constant Version_32 := 16#cf3f1b90#;
    pragma Export (C, u00135, "system__file_control_blockS");
-   u00136 : constant Version_32 := 16#06c97596#;
+   u00136 : constant Version_32 := 16#aa51bdf3#;
    pragma Export (C, u00136, "destocB");
-   u00137 : constant Version_32 := 16#e1c45355#;
+   u00137 : constant Version_32 := 16#4d5c9b30#;
    pragma Export (C, u00137, "destocS");
    u00138 : constant Version_32 := 16#f08789ae#;
    pragma Export (C, u00138, "ada__text_io__enumeration_auxB");
@@ -351,14 +351,18 @@ package ada_main is
    pragma Export (C, u00156, "system__img_enum_newB");
    u00157 : constant Version_32 := 16#53ec87f8#;
    pragma Export (C, u00157, "system__img_enum_newS");
-   u00158 : constant Version_32 := 16#bc471de0#;
-   pragma Export (C, u00158, "system__val_enumB");
-   u00159 : constant Version_32 := 16#89bac3ad#;
-   pragma Export (C, u00159, "system__val_enumS");
+   u00158 : constant Version_32 := 16#5a895de2#;
+   pragma Export (C, u00158, "system__pool_globalB");
+   u00159 : constant Version_32 := 16#7141203e#;
+   pragma Export (C, u00159, "system__pool_globalS");
    u00160 : constant Version_32 := 16#5dc07a5a#;
    pragma Export (C, u00160, "system__memoryB");
    u00161 : constant Version_32 := 16#6bdde70c#;
    pragma Export (C, u00161, "system__memoryS");
+   u00162 : constant Version_32 := 16#bc471de0#;
+   pragma Export (C, u00162, "system__val_enumB");
+   u00163 : constant Version_32 := 16#89bac3ad#;
+   pragma Export (C, u00163, "system__val_enumS");
 
    --  BEGIN ELABORATION ORDER
    --  ada%s
@@ -519,6 +523,8 @@ package ada_main is
    --  ada.text_io.generic_aux%b
    --  ada.text_io.enumeration_aux%s
    --  ada.text_io.enumeration_aux%b
+   --  system.pool_global%s
+   --  system.pool_global%b
    --  destoc%s
    --  destoc%b
    --  tenda%b

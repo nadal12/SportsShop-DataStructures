@@ -1,4 +1,5 @@
 with ada.Strings.Unbounded;
+use ada.Strings.Unbounded;
 
 package destoc is
 
@@ -6,7 +7,8 @@ package destoc is
    type marca is (Nike, Adidas, Reebok, Asics, Fila, Puma, Quiksilver, Kappa, Joma, Converse);
 
    type codi is new Natural range 0..5000000;
-   type nom is new String(1..33);
+
+   type nom is new Unbounded_String;
 
    --Excepciones
    ya_existe: exception;

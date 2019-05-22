@@ -40,6 +40,7 @@ package body destoc is
 
       --Se pone el producto en la estructura.
       poner(raiz, k, p, h, ms(m), paux);
+
       if paux /= null then
          ms(m) := paux;
 

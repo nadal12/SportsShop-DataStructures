@@ -9,9 +9,8 @@ use destoc;
 procedure tenda is
 
    s: estoc;
-   us: unbounded_string;
    j: Natural;
-   N: natural := 1500000;
+   N: natural := 50;
    Nc: natural;
    type array_range is new natural range 1..5;
    type codi_array is array(array_range) of codi;
@@ -40,21 +39,13 @@ begin
       New_Line;
    end loop;
 
-   --CARGAR STOCK CON 100 PRODUCTOS
+   --CARGAR STOCK CON N PRODUCTOS
    Nc := N/10;
    Put_Line("Cargar "&N'Image&" productos nuevos; "&Nc'Image &" de cada marca..");
    Put_Line("posar_producte(estoc, marca, codigo, unidades);");
 
    for i in 0..N loop
-      us := To_Unbounded_String("Prod"&i'Image);
-
-      j := Length(us);
-      while j < nom'Length loop
-         us := us& " ";
-         j:=j+1;
-      end loop;
-
-      posar_producte(s, marca'Val(i mod 10), codi(i), nom(to_string(us)), i+5);
+      posar_producte(s, marca'Val(i mod 10), codi(i), To_Unbounded_String("Prod"&i'Image), i+5);
    end loop;
    New_Line;
 
@@ -96,7 +87,7 @@ begin
    --INTRODUCIR PRODUCTO CON UN CODIGO YA EXISTENTE
    Put_Line("Introducir producto con codigo ya existente..");
    Put_Line("posar_producte(estoc, marca, 50, unidades)");
-   posar_producte(s, marca'Val(3), 50, "p1                               " ,208);
+   posar_producte(s, marca'Val(3), 50, To_Unbounded_String("p1"),208);
    New_Line;
 
    --BORRAR PRODUCTO CON UN CODIGO INEXISTENTE

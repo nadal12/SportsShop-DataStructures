@@ -32,6 +32,7 @@ package body ada_main is
    E111 : Short_Integer; pragma Import (Ada, E111, "system__storage_pools__subpools_E");
    E097 : Short_Integer; pragma Import (Ada, E097, "ada__strings__unbounded_E");
    E130 : Short_Integer; pragma Import (Ada, E130, "ada__text_io_E");
+   E159 : Short_Integer; pragma Import (Ada, E159, "system__pool_global_E");
    E137 : Short_Integer; pragma Import (Ada, E137, "destoc_E");
 
    Sec_Default_Sized_Stacks : array (1 .. 1) of aliased System.Secondary_Stack.SS_Stack (System.Parameters.Runtime_Default_Sec_Stack_Size);
@@ -43,40 +44,54 @@ package body ada_main is
 
    procedure finalize_library is
    begin
-      E130 := E130 - 1;
+      E137 := E137 - 1;
       declare
          procedure F1;
-         pragma Import (Ada, F1, "ada__text_io__finalize_spec");
+         pragma Import (Ada, F1, "destoc__finalize_spec");
       begin
          F1;
       end;
-      E097 := E097 - 1;
+      E159 := E159 - 1;
       declare
          procedure F2;
-         pragma Import (Ada, F2, "ada__strings__unbounded__finalize_spec");
+         pragma Import (Ada, F2, "system__pool_global__finalize_spec");
       begin
          F2;
       end;
-      E111 := E111 - 1;
+      E130 := E130 - 1;
       declare
          procedure F3;
-         pragma Import (Ada, F3, "system__storage_pools__subpools__finalize_spec");
+         pragma Import (Ada, F3, "ada__text_io__finalize_spec");
       begin
          F3;
       end;
-      E113 := E113 - 1;
+      E097 := E097 - 1;
       declare
          procedure F4;
-         pragma Import (Ada, F4, "system__finalization_masters__finalize_spec");
+         pragma Import (Ada, F4, "ada__strings__unbounded__finalize_spec");
       begin
          F4;
       end;
+      E111 := E111 - 1;
       declare
          procedure F5;
-         pragma Import (Ada, F5, "system__file_io__finalize_body");
+         pragma Import (Ada, F5, "system__storage_pools__subpools__finalize_spec");
+      begin
+         F5;
+      end;
+      E113 := E113 - 1;
+      declare
+         procedure F6;
+         pragma Import (Ada, F6, "system__finalization_masters__finalize_spec");
+      begin
+         F6;
+      end;
+      declare
+         procedure F7;
+         pragma Import (Ada, F7, "system__file_io__finalize_body");
       begin
          E134 := E134 - 1;
-         F5;
+         F7;
       end;
       declare
          procedure Reraise_Library_Exception_If_Any;
@@ -234,6 +249,8 @@ package body ada_main is
       Ada.Text_Io'Elab_Spec;
       Ada.Text_Io'Elab_Body;
       E130 := E130 + 1;
+      System.Pool_Global'Elab_Spec;
+      E159 := E159 + 1;
       destoc'elab_spec;
       E137 := E137 + 1;
    end adainit;
@@ -271,10 +288,10 @@ package body ada_main is
    end;
 
 --  BEGIN Object file/option list
-   --   C:\Users\nadal\Desktop\P3-ED\practica-3\obj\destoc.o
-   --   C:\Users\nadal\Desktop\P3-ED\practica-3\obj\tenda.o
-   --   -LC:\Users\nadal\Desktop\P3-ED\practica-3\obj\
-   --   -LC:\Users\nadal\Desktop\P3-ED\practica-3\obj\
+   --   C:\Users\Nadal\Desktop\p3\practica-3\obj\destoc.o
+   --   C:\Users\Nadal\Desktop\p3\practica-3\obj\tenda.o
+   --   -LC:\Users\Nadal\Desktop\p3\practica-3\obj\
+   --   -LC:\Users\Nadal\Desktop\p3\practica-3\obj\
    --   -LC:/gnat/2018/lib/gcc/x86_64-pc-mingw32/7.3.1/adalib/
    --   -static
    --   -lgnat
