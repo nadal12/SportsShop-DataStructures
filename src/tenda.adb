@@ -131,6 +131,7 @@ begin
       end loop;
 
    --VACIAR STOCK DESPUES DE PRUEBAS
+   Put_Line("Borrar stock después de realizar pruebas..");
    Put_Line("Inicializacion de un stock..");
    Put_Line("estoc_buit(s);");
    estoc_buit(s);
