@@ -7,14 +7,11 @@ with destoc;
 use destoc;
 
 procedure tenda is
---
---     package miestoc is new destoc;
---     use miestoc;
 
    s: estoc;
    us: unbounded_string;
    j: Natural;
-   N: natural := 50;
+   N: natural := 1500000;
    Nc: natural;
    type array_range is new natural range 1..5;
    type codi_array is array(array_range) of codi;
@@ -36,12 +33,12 @@ begin
    New_Line;
 
    Put_Line("Imprimir stock por marcas..");
-   imprimir:
+
    for i in marca'Range loop
       Put_Line("imprimir_productes_marcas(s, "& i'Image &");");
       imprimir_productes_marca(s, i);
       New_Line;
-   end loop imprimir;
+   end loop;
 
    --CARGAR STOCK CON 100 PRODUCTOS
    Nc := N/10;
@@ -68,12 +65,11 @@ begin
    New_Line;
 
    Put_Line("Imprimir stock por marcas..");
-   imprimir2:
    for i in marca'Range loop
       Put_Line("imprimir_productes_marcas(s, "& i'Image &");");
       imprimir_productes_marca(s, i);
       New_Line;
-   end loop imprimir2;
+   end loop;
 
    --BORRAR PRODUCTOS DEL STOCK
    Put_Line("Borrar productos por codigo..");
@@ -91,12 +87,11 @@ begin
       New_Line;
 
       Put_Line("Imprimir stock por marcas despues de borrados..");
-      imprimir3:
       for j in marca'Range loop
          Put_Line("imprimir_productes_marcas(s, "& j'Image &");");
          imprimir_productes_marca(s, j);
          New_Line;
-      end loop imprimir3;
+      end loop;
 
    --INTRODUCIR PRODUCTO CON UN CODIGO YA EXISTENTE
    Put_Line("Introducir producto con codigo ya existente..");
@@ -131,7 +126,7 @@ begin
       end loop;
 
    --VACIAR STOCK DESPUES DE PRUEBAS
-   Put_Line("Borrar stock después de realizar pruebas..");
+   Put_Line("Borrar stock despues de realizar pruebas..");
    Put_Line("Inicializacion de un stock..");
    Put_Line("estoc_buit(s);");
    estoc_buit(s);

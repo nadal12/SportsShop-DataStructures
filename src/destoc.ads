@@ -1,8 +1,3 @@
---  generic
---        type item is private;
---        type key is private;
---        with function "<"(k1, k2: in key) return boolean;
---        with function ">"(k1, k2: in key) return boolean;
 with ada.Strings.Unbounded;
 
 package destoc is

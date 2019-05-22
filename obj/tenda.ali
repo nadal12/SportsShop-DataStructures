@@ -17,7 +17,7 @@ RV NO_DYNAMIC_SIZED_OBJECTS
 RV NO_IMPLEMENTATION_PRAGMAS
 RV SPARK_05
 
-U tenda%b		tenda.adb		c32c7d46 NE OO SU IL
+U tenda%b		tenda.adb		bff1e065 NE OO SU IL
 W ada%s			ada.ads			ada.ali
 Z ada.exceptions%s	a-except.adb		a-except.ali
 W ada.strings%s		a-string.ads		a-string.ali
@@ -48,7 +48,7 @@ D a-strunb.ads		20180524051738 8098c91f ada.strings.unbounded%s
 D a-tags.ads		20180524051738 491b781d ada.tags%s
 D a-textio.ads		20180524051738 881db35a ada.text_io%s
 D a-unccon.ads		20180524051738 0e9b276f ada.unchecked_conversion%s
-D destoc.ads		20190521201110 615c9a4a destoc%s
+D destoc.ads		20190522072950 615c9a4a destoc%s
 D interfac.ads		20180524051736 5ab55268 interfaces%s
 D i-cstrea.ads		20180524051736 e53d8b8e interfaces.c_streams%s
 D system.ads		20180524051738 32a08138 system%s
@@ -77,36 +77,36 @@ D s-stratt.ads		20180524051736 aedef97e system.stream_attributes%s
 D s-traent.ads		20180524051736 005bf670 system.traceback_entries%s
 D s-unstyp.ads		20180524051736 34867c83 system.unsigned_types%s
 D s-wchcon.ads		20180524051738 1b7d22d2 system.wch_con%s
-D tenda.adb		20190521213742 aaf59d49 tenda%b
+D tenda.adb		20190522073702 d628006a tenda%b
 X 1 ada.ads
 16K9*Ada 20e8 43|1r6 2r5 3r6 4r5
 X 8 a-string.ads
 16K13*Strings 35e16 43|3r10 4r9
 X 10 a-strunb.ads
 76K21*Unbounded 491e26 43|3w18 4r17
-79R9*Unbounded_String<5|43R9> 474e14 43|15r8
-84V13*Length{natural} 43|54s12
-94V13*To_Unbounded_String{79R9} 43|52s13
-100V13*To_String{string} 43|60s59
-123V14*"&"{79R9} 43|56s18
+79R9*Unbounded_String<5|43R9> 474e14 43|12r8
+84V13*Length{natural} 43|51s12
+94V13*To_Unbounded_String{79R9} 43|49s13
+100V13*To_String{string} 43|57s59
+123V14*"&"{79R9} 43|53s18
 X 12 a-textio.ads
 49K13*Text_IO 471e16 43|1w10 2r9
-166U14*New_Line 43|29s4 36s4 43s7 62s4 68s4 75s7 85s4 91s7 98s10 105s4 113s4
-. 130s10 137s4 144s4 151s7
-263U14*Put_Line 43|26s4 27s4 32s4 33s4 34s4 38s4 41s7 48s4 49s4 65s4 66s4
-. 70s4 73s7 79s4 82s7 88s7 89s7 93s7 96s10 102s4 103s4 108s4 109s4 111s4
-. 116s4 119s7 125s10 128s10 134s4 135s4 140s4 141s4 142s4 146s4 149s7
+166U14*New_Line 43|26s4 33s4 40s7 59s4 65s4 71s7 81s4 87s7 93s10 100s4 108s4
+. 125s10 133s4 140s4 147s7
+263U14*Put_Line 43|23s4 24s4 29s4 30s4 31s4 35s4 38s7 45s4 46s4 62s4 63s4
+. 67s4 69s7 75s4 78s7 84s7 85s7 89s7 91s10 97s4 98s4 103s4 104s4 106s4 111s4
+. 114s7 120s10 123s10 129s4 130s4 131s4 136s4 137s4 138s4 142s4 145s7
 X 14 destoc.ads
-8K9*destoc 80e11 43|6w6 7r5
-10R9*estoc 64e14 43|14r7
-11E9*marca 11e94 43|40r13 60r25 72r13 95r16 104r22 127r16 148r13
-13I9*codi<integer> 43|20r45 60r46 120r28
-14A9*nom<string>(character)<integer> 43|55r17 60r55
-23U14*estoc_buit 43|28s4 136s4
-24U14*posar_producte 43|60s7 104s4
-26U14*esborrar_producte 43|83s7 110s4 112s4 120s7
-27U14*imprimir_productes_marca 43|42s7 74s7 97s10 129s10 150s7
-28U14*imprimir_estoc_total 43|35s4 67s4 90s7 143s4
+3K9*destoc 75e11 43|6w6 7r5
+5R9*estoc 59e14 43|11r7
+6E9*marca 6e94 43|37r13 57r25 68r13 90r16 99r22 122r16 144r13
+8I9*codi<integer> 43|17r45 57r46 115r28
+9A9*nom<string>(character)<integer> 43|52r17 57r55
+18U14*estoc_buit 43|25s4 132s4
+19U14*posar_producte 43|57s7 99s4
+21U14*esborrar_producte 43|79s7 105s4 107s4 115s7
+22U14*imprimir_productes_marca 43|39s7 70s7 92s10 124s10 146s7
+23U14*imprimir_estoc_total 43|32s4 64s4 86s7 139s4
 X 17 system.ads
 67M9*Address
 X 29 s-memory.ads
@@ -116,26 +116,23 @@ X 29 s-memory.ads
 X 35 s-stalib.adb
 93U14 Break_Start 94i<c,__gnat_break_start>22
 X 43 tenda.adb
-9U11*tenda 9b11 153l5 153t10
-14r4 s{14|10R9} 28m15 35r25 42r32 60m22 60r22 67r25 74r32 83m25 83r25 90r28
-. 97r35 104m19 104r19 110m22 110r22 112m22 112r22 120m25 120r25 129r35 136m15
-. 143r25 150r32
-15r4 us{10|79R9} 52m7 54r19 56m10 56r16 60r69
-16i4 j{natural} 54m7 55r13 57m10 57r13 117m4 118r10 119r40 120r33 121m7 121r12
-17i4 N{natural} 47r10 48r23 51r16 118r15
-18i4 Nc{natural} 47m4 48r53
-19I9 array_range<integer> 20r29
-20A9 codi_array(14|13I9)<19I9> 21r11
-21a4 codis{20A9} 81r13 82r40 83r28
-39l4 imprimir 44l13 44e21
-40e8 i{14|11E9} 41r49 42r35
-51i8 i{integer} 52r40 60r35 60r51 60r75
-71l4 imprimir2 76l13 76e22
-72e8 i{14|11E9} 73r49 74r35
-80l4 borrar 84l13 84e19
-81i8 i<integer> 82r46 83r34
-94l7 imprimir3 99l16 99e25
-95e11 j{14|11E9} 96r52 97r38
-127e11 j{14|11E9} 128r52 129r38
-148e8 i{14|11E9} 149r49 150r35
+9U11*tenda 9b11 149l5 149t10
+11r4 s{14|5R9} 25m15 32r25 39r32 57m22 57r22 64r25 70r32 79m25 79r25 86r28
+. 92r35 99m19 99r19 105m22 105r22 107m22 107r22 115m25 115r25 124r35 132m15
+. 139r25 146r32
+12r4 us{10|79R9} 49m7 51r19 53m10 53r16 57r69
+13i4 j{natural} 51m7 52r13 54m10 54r13 112m4 113r10 114r40 115r33 116m7 116r12
+14i4 N{natural} 44r10 45r23 48r16 113r15
+15i4 Nc{natural} 44m4 45r53
+16I9 array_range<integer> 17r29
+17A9 codi_array(14|8I9)<16I9> 18r11
+18a4 codis{17A9} 77r13 78r40 79r28
+37e8 i{14|6E9} 38r49 39r35
+48i8 i{integer} 49r40 57r35 57r51 57r75
+68e8 i{14|6E9} 69r49 70r35
+76l4 borrar 80l13 80e19
+77i8 i<integer> 78r46 79r34
+90e11 j{14|6E9} 91r52 92r38
+122e11 j{14|6E9} 123r52 124r38
+144e8 i{14|6E9} 145r49 146r35
 

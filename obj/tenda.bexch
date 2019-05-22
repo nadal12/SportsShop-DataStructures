@@ -1,18 +1,18 @@
 [GENERATED OBJECT FILE]
 b__tenda.o
 [PROJECT FILES]
-C:\Users\Nadal\Desktop\p3\practica-3\estoc.gpr
-20190515164716
+C:\Users\nadal\Desktop\P3-ED\practica-3\estoc.gpr
+20190522072250
 [BOUND OBJECT FILES]
-C:\Users\Nadal\Desktop\p3\practica-3\obj\destoc.o
-C:\Users\Nadal\Desktop\p3\practica-3\obj\tenda.o
+C:\Users\nadal\Desktop\P3-ED\practica-3\obj\destoc.o
+C:\Users\nadal\Desktop\P3-ED\practica-3\obj\tenda.o
 [GENERATED SOURCE FILES]
 b__tenda.ads
 b__tenda.adb
 b__tenda.ali
 [RESULTING OPTIONS]
--LC:\Users\Nadal\Desktop\p3\practica-3\obj\
--LC:\Users\Nadal\Desktop\p3\practica-3\obj\
+-LC:\Users\nadal\Desktop\P3-ED\practica-3\obj\
+-LC:\Users\nadal\Desktop\P3-ED\practica-3\obj\
 -LC:/gnat/2018/lib/gcc/x86_64-pc-mingw32/7.3.1/adalib/
 -static
 -static-libgcc
