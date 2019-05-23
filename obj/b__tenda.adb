@@ -288,10 +288,10 @@ package body ada_main is
    end;
 
 --  BEGIN Object file/option list
-   --   C:\Users\Nadal\Desktop\p3\practica-3\obj\destoc.o
-   --   C:\Users\Nadal\Desktop\p3\practica-3\obj\tenda.o
-   --   -LC:\Users\Nadal\Desktop\p3\practica-3\obj\
-   --   -LC:\Users\Nadal\Desktop\p3\practica-3\obj\
+   --   C:\Users\nadal\Desktop\P3-ED\practica-3\obj\destoc.o
+   --   C:\Users\nadal\Desktop\P3-ED\practica-3\obj\tenda.o
+   --   -LC:\Users\nadal\Desktop\P3-ED\practica-3\obj\
+   --   -LC:\Users\nadal\Desktop\P3-ED\practica-3\obj\
    --   -LC:/gnat/2018/lib/gcc/x86_64-pc-mingw32/7.3.1/adalib/
    --   -static
    --   -lgnat

@@ -1,3 +1,5 @@
+------------------------PAQUETE DE ESPECIFICACIÓN DESTOC-----------------------
+
 with ada.Strings.Unbounded;
 use ada.Strings.Unbounded;
 

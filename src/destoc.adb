@@ -1,3 +1,5 @@
+------------------------PAQUETE DE IMPLEMENTACIÓN DESTOC-----------------------
+
 with Ada.Text_IO;
 use Ada.Text_IO;
 
@@ -87,7 +89,7 @@ package body destoc is
       i: pproducte;
    begin
       --Check si la lista para dicha marca existe
-      if ms(m) = null then Put_Line("Estoc de aquesta marca buit"); return; end if;
+      if ms(m) = null then Put_Line("Error: El stock de esta marca esta vacio"); return; end if;
 
       p := ms(m);
 
@@ -108,7 +110,7 @@ package body destoc is
 
    begin
 
-      if r = null then Put_Line("Estoc buit"); return; end if;
+      if r = null then Put_Line("Error: Stock vacio."); return; end if;
 
       imprimir_estoc_total(r);
 
@@ -148,7 +150,7 @@ package body destoc is
             poner(p.rc, k, x, h, sig, aux); --subárbol der
             if h then balanceo_der(p, h, insert_mode); end if ;
          else -- k=p.k
-            Put_Line("Producto ya existente"); return;
+            Put_Line("Error: Producto ya existente."); return;
          end if ;
       end if ;
    exception
@@ -248,7 +250,7 @@ package body destoc is
    procedure borrar(p: in out pnodo; k: in codi; h: out boolean; paux: out pnodo) is
    begin
 
-      if p=null then Put_Line("No existe"); h:= false; return; end if ;
+      if p=null then Put_Line("Error: El producto no existe"); h:= false; return; end if ;
       if k<p.k then
          borrar(p.lc, k, h, paux);
          if h then balanceo_der(p, h, remove_mode); end if ;
@@ -294,10 +296,10 @@ package body destoc is
    end borrado_masbajo;
 
    procedure print(p: in producte) is
-      s: string(1..33);
+     -- s: string(1..33);
    begin
-      mi_enum.put(s, p.m);
-      Put_Line("Nombre: " & s & "|Marca: " & natural(p.c)'Image & " |Codigo: " & p.c'Image & " | Unidades: " & p.u'Image);
+     -- mi_enum.put(s, p.n);
+      Put_Line("Nombre: " & To_String(p.n) & "| Marca: " & marca(p.m)'Image & " | Codigo: " & p.c'Image & " | Unidades: " & p.u'Image);
    end print;
 
 end destoc;
