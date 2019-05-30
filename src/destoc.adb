@@ -5,6 +5,9 @@ use Ada.Text_IO;
 
 package body destoc is
 
+
+   no_vacio: exception; --Excepcion para borrado
+
    package mi_enum is new Ada.Text_IO.Enumeration_IO(marca);
    use mi_enum;
 
@@ -52,7 +55,6 @@ package body destoc is
 
       end if;
 
-
    end posar_producte;
 
    -- Borra el producto a través del código dado. Sólo se tiene que poder
@@ -62,6 +64,7 @@ package body destoc is
       raiz: pnodo renames c.raiz;
       ms: marcas renames c.ms;
       paux: pnodo;
+
    begin
       borrar(raiz, k, h, paux);
 
@@ -78,6 +81,9 @@ package body destoc is
             paux.sig.ant := paux.ant;
          end if;
       end if;
+
+   exception
+         when no_vacio => Put_line("Error: no se puede borrar un producto que del haya existencias.");
 
    end esborrar_producte;
 
@@ -250,7 +256,8 @@ package body destoc is
    procedure borrar(p: in out pnodo; k: in codi; h: out boolean; paux: out pnodo) is
    begin
 
-      if p=null then Put_Line("Error: El producto no existe"); h:= false; return; end if ;
+      if p=null then Put_Line("Error: El producto no existe"); h:= false; return; end if;
+
       if k<p.k then
          borrar(p.lc, k, h, paux);
          if h then balanceo_der(p, h, remove_mode); end if ;
@@ -268,6 +275,7 @@ package body destoc is
    begin
 
       paux := p;
+      if p.item.u /= 0 then raise no_vacio; end if;
 
       --Borrado segun cantidad de hijos que tenga el pnodo
       if p.lc= null and p.rc= null then
@@ -299,7 +307,7 @@ package body destoc is
      -- s: string(1..33);
    begin
      -- mi_enum.put(s, p.n);
-      Put_Line("Nombre: " & To_String(p.n) & "| Marca: " & marca(p.m)'Image & " | Codigo: " & p.c'Image & " | Unidades: " & p.u'Image);
+      Put_Line("Nombre: " & To_String(p.n) & "| Marca: " & p.m'Image & " | Codigo: " & p.c'Image & " | Unidades: " & p.u'Image);
    end print;
 
 end destoc;

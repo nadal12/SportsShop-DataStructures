@@ -27,7 +27,6 @@ procedure tenda is
 
    --Variables de apoyo.
    s: estoc;
-   j: Natural;
    N: natural := 50; --Cantidad de productos que se generarán.
    Nc: natural;
    type array_range is new natural range 1..5;
@@ -65,9 +64,9 @@ begin
    --CARGAR STOCK CON N PRODUCTOS
    Nc := N/10;
    Put_Line("Cargar"&N'Image&" productos nuevos. "&Nc'Image &" de cada marca..");
-   Put_Line("posar_producte(estoc, marca, codigo, unidades);");
+   Put_Line("posar_producte(s, marca, codigo, unidades);");
 
-   for i in 0..N loop
+   for i in 1..N loop
       posar_producte(s, marca'Val(i mod 10), codi(i), To_Unbounded_String("Producto"&i'Image), i+6);
    end loop;
    Put_Line("OK!");
@@ -111,50 +110,37 @@ begin
       New_Line;
    Put_Line("OK!");
    Put_Line("****************************************************************");
-      Put_Line("Imprimir stock por marcas despues de borrados..");
-      for j in marca'Range loop
-         Put_Line("imprimir_productes_marcas(s, "& j'Image &");");
-         imprimir_productes_marca(s, j);
-         New_Line;
-      end loop;
-   Put_Line("OK!");
-   Put_Line("****************************************************************");
 
    --INTRODUCIR PRODUCTO CON UN CODIGO YA EXISTENTE
    Put_Line("Introducir producto con codigo ya existente..");
-   Put_Line("posar_producte(estoc, marca, 50, unidades)");
+   Put_Line("posar_producte(estoc, marca, 50, nombre, unidades)");
    posar_producte(s, marca'Val(3), 50, To_Unbounded_String("p1"),208);
    New_Line;
    Put_Line("****************************************************************");
 
    --BORRAR PRODUCTO CON UN CODIGO INEXISTENTE
    Put_Line("Borrar un producto inexistente..");
-   Put_Line("esborrar_producte(s, 15)");
-   esborrar_producte(s, 8);
    Put_Line("esborrar_producte(s, 100)");
    esborrar_producte(s, 100);
    New_Line;
    Put_Line("****************************************************************");
 
-   --BORRAR TODOS LOS PRODUCTOS DE UNA MARCA
-   Put_Line("Borrar todos los productos de una marca..");
-   j := 3;
-   while j <= N loop
-      Put_Line("esborrar_producte(s, "&j'Image&");");
-      esborrar_producte(s, codi(j));
-      j := j + 10;
-
-   end loop;
-   Put_Line("OK!");
-   Put_Line("****************************************************************");
-
-   --IMPRIMIR LOS PRODUCTOS POR MARCA DESPUÉS DE BORRAR.
-   Put_Line("Imprimir stock por marcas despues de borrados..");
-   for j in marca'Range loop
-      Put_Line("imprimir_productes_marcas(s, "& j'Image &");");
-      imprimir_productes_marca(s, j);
-      New_Line;
-   end loop;
+   --INTRODUCIR PRODUCTO CON 0 UNIDADES PARA BORRADO POSTERIOR
+   put_line("Introducir producto con 0 unidades para borrar..");
+   put_line("posar_producte(s, Nike, 102, Producto 102, 0);");
+   posar_producte(s, marca(Nike), 102, To_Unbounded_String("Producto 102"), 0);
+   new_line;
+   put_line("Visualizar productos de la misma marca para verificar..");
+   put_line("imprimir_productes_marca(s, Nike);");
+   imprimir_productes_marca(s, marca(Nike));
+   New_Line;
+   put_line("borrar producto sin unidades..");
+   put_line("esborrar_producte(s, 102);");
+   esborrar_producte(s, 102);
+   new_line;
+   put_line("imprimir_productes_marca(s, Nike);");
+   imprimir_productes_marca(s, marca(Nike));
+   New_Line;
    Put_Line("OK!");
    Put_Line("****************************************************************");
 
