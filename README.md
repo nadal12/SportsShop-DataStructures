@@ -1,6 +1,6 @@
 Este proyecto se corresponde con la Práctica evaluada 3 de la asignatura Estructura de Datos.
 
-Se pide proponer una estructura de datos eficiente que permita resolver el problema propuesto. Ver en el documento de instrucciones. 
+Se pide proponer una estructura de datos eficiente que permita resolver el problema propuesto. Ver en el documento de instrucciones (practica3.pdf)
 
 Grado en Ingeniería informática en la Universidad de las Islas Baleares.
 
